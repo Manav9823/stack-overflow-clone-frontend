@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'stack-overflow-clone-frontend';
+  isLoggedIn: boolean = false
+  login(){
+    this.isLoggedIn = true
+  }
 }

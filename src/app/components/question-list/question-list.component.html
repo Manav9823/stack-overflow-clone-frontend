@@ -1,1 +1,32 @@
-<p>question-list works!</p>
+<h2>All Questions</h2>
+
+<div *ngFor="let question of questions" class="question-card">
+  <div class="question-details">
+    <p><strong>Title: {{ question.title }}</strong></p>
+    <p>Ques: {{ question.body }}</p>
+    <p>Tags: {{ question.tags }}</p>
+  </div>
+
+  <div class="answer-section">
+    <label for="answerInput-{{ question.id }}">Your Answer:</label>
+    <textarea id="answerInput-{{ question.id }}" [(ngModel)]="question.answer" name="answer"></textarea>
+    <button type="button" class="btn btn-primary" (click)="postAnswer(question)">Post Answer</button>
+  </div>
+
+  <!-- <div *ngIf="question.answers.text != '' && question.answers.length > 0" class="answers-section"> -->
+    <div *ngFor="let ans of question.answers">
+        <div *ngIf="ans.text !== '' " class="answers-section">
+            <ul>
+                <li>
+                  {{ ans.text }}
+                  <div class="button-section">
+                    <button type="button" class="btn btn-primary" (click)="markAccepted(question, ans.id, true)">Accepted</button>
+                    <button type="button" class="btn btn-primary" (click)="markRejected(question, ans.id, false)">Rejected</button>
+                    <span>{{ans.status}}</span>
+                  </div>   
+                </li>
+            </ul>
+          </div>
+    </div>
+
+</div>

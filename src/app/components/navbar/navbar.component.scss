@@ -1,0 +1,24 @@
+/* navbar.component.css */
+.navbar {
+    background-color: #1e3a8a; /* Adjust background color */
+    padding: 10px;
+  }
+  
+  .navbar a {
+    color: skyblue; /* Text color */
+    margin-right: 15px;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    color: #ffd700; /* Hover color */
+  }
+  
+  .navbar-toggler {
+    background-color: #ffffff; /* Toggle button background color */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #1e3a8a; /* Toggle icon color */
+  }
+  
