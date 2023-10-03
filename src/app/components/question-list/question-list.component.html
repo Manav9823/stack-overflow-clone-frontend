@@ -13,7 +13,6 @@
     <button type="button" class="btn btn-primary" (click)="postAnswer(question)">Post Answer</button>
   </div>
 
-  <!-- <div *ngIf="question.answers.text != '' && question.answers.length > 0" class="answers-section"> -->
     <div *ngFor="let ans of question.answers">
         <div *ngIf="ans.text !== '' " class="answers-section">
             <ul>

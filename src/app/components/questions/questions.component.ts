@@ -37,9 +37,7 @@ export class QuestionsComponent implements OnInit {
   tagInput: string = '';
 
   submitQuestion() {
-    console.log('In submitted')
     this.question.tags = this.tagInput.split(',').map(tag => tag.trim());    
-    console.log('Question submitted:', this.question);
     this.quesAnsService.postQuestion(this.question).subscribe(
       response => {
         console.log('Question posted successfully:', response);

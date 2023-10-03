@@ -11,20 +11,18 @@ import { QuesAnsService } from 'src/app/ques-ans.service';
 })
 
 export class LoginComponent {
-  username: string = '';
+  username: string = '' ;
   constructor(private router: Router, private appComponent:AppComponent, private quesAnsService:QuesAnsService){}
 
   login() {
-    console.log('Logged in as:', this.username);
     this.quesAnsService.login(this.username).subscribe(
       response => {
-        this.appComponent.isLoggedIn = true
-        this.router.navigate(['home'])
+        this.appComponent.isLoggedIn = true;
+        this.router.navigate(['home']);
       },
       error => {
         console.error('Error posting question:', error);
       }
     )
-
   }
 }
